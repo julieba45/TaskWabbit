@@ -1,5 +1,5 @@
 # Landing Page
-![LandingPage](Readme/PNGimage.png?raw=true)
+![LandingPage](ReadMe/PNGimage.png?raw=true)
 
 # Configuration
 This is the starter for the Flask React project.
@@ -160,7 +160,7 @@ your site just below the name of the Web Service at the top of the page.
 4. Choose a tasker:
 - Only logged in users are allowed to choose a tasker for their task
 
-![create-task](Readme/create-task.png?raw=true)
+![create-task](ReadMe/create-task.png?raw=true)
 
 6. Tasker profile
 
@@ -170,4 +170,4 @@ your site just below the name of the Web Service at the top of the page.
 
 - A logged in tasker can edit their hourly rate for a specific taskType that they are willing to perform
 
-![taskerprofile](Readme/taskerprofile.png?raw=true)
+![taskerprofile](ReadMe/taskerprofile.png?raw=true)
