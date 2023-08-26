@@ -1,5 +1,7 @@
-# Flask React Project
+# Landing Page
+![LandingPage](Readme/PNGimage.png?raw=true)
 
+# Configuration
 This is the starter for the Flask React project.
 
 ## Getting started
@@ -146,3 +148,26 @@ your site just below the name of the Web Service at the top of the page.
 
 [Render.com]: https://render.com/
 [Dashboard]: https://dashboard.render.com/
+
+# Features
+1. Choose a task:
+- Logged in users can search for the task they want done
+- Logged out users can search for the task they want done
+2. Provide task details:
+- Only logged in users are allowed to create, update, delete or view tasks.
+3. Select Hourly-rate range & confirm:
+- Only logged in users are allowed to select the price range and confirm it
+4. Choose a tasker:
+- Only logged in users are allowed to choose a tasker for their task
+
+![create-task](Readme/create-task.png?raw=true)
+
+6. Tasker profile
+
+- A logged in tasker can click their tasker profile page from a dropdown. The page includes a list of all the task types they are willing to do and what their respective hourly rate is for each task type.
+
+- A logged in tasker can remove taskTypes that they are willing to perform
+
+- A logged in tasker can edit their hourly rate for a specific taskType that they are willing to perform
+
+![taskerprofile](Readme/taskerprofile.png?raw=true)
