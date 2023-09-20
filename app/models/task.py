@@ -27,6 +27,7 @@ class Task(db.Model, UserMixin):
     user = db.relationship('User',foreign_keys='Task.user_id', back_populates='tasks')
     tasker = db.relationship('User', foreign_keys='Task.tasker_id', back_populates='tasked_tasks')
 
+    reviews = db.relationship('Review', back_populates='task')
     payments = db.relationship('Payment', back_populates='task', cascade="all, delete-orphan")
 
     def to_dict(self):

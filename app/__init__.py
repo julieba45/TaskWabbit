@@ -124,11 +124,12 @@ def createReview():
             description=form.data['description'],
             rating=form.data['rating'],
             tasker_id=form.data['tasker_id'],
-            user_id=form.data['user_id']
+            user_id=form.data['user_id'],
+            task_id=form.data['task_id']
         )
         db.session.add(newReview)
         db.session.commit()
-        
+
         return newReview.to_dict_im()
     return { 'Error': 'Error creating Review'}
 

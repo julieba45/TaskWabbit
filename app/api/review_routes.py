@@ -34,7 +34,7 @@ def delete(id):
     else:
         db.session.delete(rev)
         db.session.commit()
-        return rev.to_dict_im()
+        return rev.to_dict_del()
 
 
 
