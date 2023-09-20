@@ -14,11 +14,13 @@ class Review(db.Model, UserMixin):
     rating = db.Column(db.Float)
     user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')), nullable=False)
     tasker_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')), nullable=False)
+    task_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('tasks.id')), nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow)
 
     user = db.relationship('User',  foreign_keys='Review.user_id', back_populates='reviews')
     tasker = db.relationship('User', foreign_keys='Review.tasker_id', back_populates='received_reviews')
+    task = db.relationship('Task', back_populates='reviews')
 
     def to_dict_im(self):
         return {
@@ -27,6 +29,8 @@ class Review(db.Model, UserMixin):
             'rating': self.rating,
             'user_id': self.user_id,
             'tasker_id': self.tasker_id,
+            'task_id':self.task_id,
+            'task': self.task.to_dict() if self.task else None,
             'created_at': self.created_at,
             'updated_at': self.updated_at
         }
@@ -37,4 +41,16 @@ class Review(db.Model, UserMixin):
             'rating': self.rating,
             'user_id': self.user_id,
             'tasker_id': self.tasker_id,
+            'task_id':self.task_id,
+            'task': self.task.to_dict() if self.task else None,
+        }
+    def to_dict_del(self):
+        return {
+            'id': self.id,
+            'description': self.description,
+            'rating': self.rating,
+            'user_id': self.user_id,
+            'tasker_id': self.tasker_id,
+            'created_at': self.created_at,
+            'updated_at': self.updated_at
         }

@@ -104,7 +104,7 @@ function PastTasksPage(){
                             </div>
                             <div className="task-button-actions">
                                 <button className="select-button" onClick={() => openDeleteModal(task.id)}>Delete Task</button>
-                                <CreateReviewModal tasker_id={task.tasker_id}/>
+                                <CreateReviewModal tasker_id={task.tasker_id} task_id={task.id}/>
                                 {taskDate >= currentDate && <NavLink className="select-button" to={`/tasks/${task.id}/edit`}>Edit Task</NavLink>}
                             </div>
                         </div>

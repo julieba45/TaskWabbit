@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom/cjs/react-router-dom";
 import "./CreateReviewForm.css"
 
-const CreateReviewForm = ({test}) => {
+const CreateReviewForm = ({test, taskId}) => {
 
     // console.log(test, typeof(test),'tasker_id in form')
     const [description, setDescription] = useState('')
@@ -41,7 +41,8 @@ const CreateReviewForm = ({test}) => {
             description,
             rating,
             user_id: sessionUser.id,
-            tasker_id: test
+            tasker_id: test,
+            task_id:taskId,
         }
 
         let newReviewByUser = await dispatch(createNewReviewByUser(payload))

@@ -8,4 +8,4 @@ class ReviewForm(FlaskForm):
     rating = IntegerField('Rating', validators=[DataRequired(), NumberRange(min=1, max=5)])
     tasker_id = IntegerField('TaskerId', validators=[DataRequired()])
     user_id = IntegerField('UserId', validators=[DataRequired()])
-
+    task_id = IntegerField('TaskId', validators=[DataRequired()])
