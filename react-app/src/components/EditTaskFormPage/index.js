@@ -118,7 +118,7 @@ function EditTaskFormPage(){
             "user_id": task.user_id,
             "tasker_id": task.tasker_id,
             "task_date": task.task_date,
-            "totalPrice": task.totalPrice
+            "totalPrice": task.totalPrice,
         }
         const taskData = {
             title,
