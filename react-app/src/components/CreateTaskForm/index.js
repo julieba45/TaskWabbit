@@ -72,7 +72,8 @@ function CreateTaskForm() {
       totalPrice: formData.totalPrice,
       location: formData.location,
       task_date: formData.task_date,
-      tasker_id: formData.tasker_id
+      tasker_id: formData.tasker_id,
+      timeDiff: new Date().getTimezoneOffset()
     }
     const data = await dispatch(createTask(taskData))
     // console.log("Create task Form in the component", data);
