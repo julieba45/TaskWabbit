@@ -87,8 +87,14 @@ def update_task(taskId):
         # check validations
         # if tasks >= 8:
         #     return {'errors': 'Tasker has reached maximum limit of tasks for the day'}, 400
-        if task_date < datetime.now().date():
-            return {'errors': ['Cannot schedule task in the past']}, 400
+
+        #make sure timezone aligns
+        # time_diff_minutes = int(request.json.get('timeDiff', 0))
+        # adjusted_current_date = datetime.now() - timedelta(minutes=time_diff_minutes)
+        # adjusted_current_date = adjusted_current_date.date()
+
+        # if task_date < adjusted_current_date:
+        #     return {'errors': ['Cannot schedule task in the past']}, 400
 
         # Update the task
         if 'taskTypeId' in form.data:
