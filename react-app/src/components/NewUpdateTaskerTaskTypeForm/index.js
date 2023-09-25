@@ -7,8 +7,8 @@ import './NewUpdateTaskerTaskType.css';
 
 function NewUpdateTaskerTaskTypeForm() {
     const { taskerTaskTypeId } = useParams();
-    console.log(taskerTaskTypeId, "*********taskerTaskType.Id in Update Form*********")
-    
+    // console.log(taskerTaskTypeId, "*********taskerTaskType.Id in Update Form*********")
+
     //Get taskerTaskType by Id
     const dispatch = useDispatch();
     let hasErrors = false;
@@ -19,10 +19,10 @@ function NewUpdateTaskerTaskTypeForm() {
     }, [dispatch, taskerTaskTypeId]);
 
     const taskerProfile = useSelector((state) => state.taskerProfile.taskerTaskType);
-    console.log("*********TASKERProfile IN UPDATE FORM", taskerProfile)
+    // console.log("*********TASKERProfile IN UPDATE FORM", taskerProfile)
 
     const taskType_id = taskerProfile.taskType_id
-    console.log(taskType_id, "taskType_id")
+    // console.log(taskType_id, "taskType_id")
 
     const taskTypes = useSelector(state => state.taskTypes);
 
@@ -46,7 +46,7 @@ function NewUpdateTaskerTaskTypeForm() {
 
     const handleSubmit = async (e) => {
     //   console.log("Inside Handle SUbmit...EditTaskerTaskTypeForm component>>>>>>>>>>>>>>")
-  
+
       e.preventDefault();
       setHasSubmitted(true);
       const existingData = {
@@ -58,7 +58,7 @@ function NewUpdateTaskerTaskTypeForm() {
         hourlyRate
       }
     //   console.log(taskerTaskTypeData, "********EDITED***taskerTaskTypeData in handle submit")
-      
+
       const finalTaskerTaskTypeData = {
         ...existingData,
         ...taskerTaskTypeData
@@ -75,18 +75,18 @@ function NewUpdateTaskerTaskTypeForm() {
       } else {
         setRateError('');
       }
-    
+
       // Disable form submission if errors are present
       if (hasErrors) {
         return;
       }
-    
+
       //dispatching edited data
       const editedTaskType = await dispatch(updateTaskerTaskType(taskerTaskTypeId, finalTaskerTaskTypeData));
-      console.log(editedTaskType, "editedTaskerTaskType details in EditTaskerTaskTypeForm component----AFTER dispatching editTaskerTaskType");
+      // console.log(editedTaskType, "editedTaskerTaskType details in EditTaskerTaskTypeForm component----AFTER dispatching editTaskerTaskType");
 
       if (editedTaskType) {
-        
+
         history.push(`/taskerTaskTypes/current`);
         dispatch(getTaskerTaskTypes());
       }
@@ -105,14 +105,14 @@ function NewUpdateTaskerTaskTypeForm() {
 
     return (
       <div className='update-tasktype-container'>
-       
-          <form className ='step1' onSubmit={handleSubmit} >      
-                      <h3 className="form-edit-description">Use This Form To Edit Your Hourly Rate</h3>              
+
+          <form className ='step1' onSubmit={handleSubmit} >
+                      <h3 className="form-edit-description">Use This Form To Edit Your Hourly Rate</h3>
                       {/* <h3>Use this form to edit the hourly rate for: <span className="descriptionTT">{taskTypeDescription}.</span></h3>               */}
                               <div className='d'>
                                   <label htmlFor='hourlyRate'>Enter an hourly rate in US dollars: </label>
-                                      
-                                      <input 
+
+                                      <input
                                           type="number"
                                           placeholder="hourlyRate"
                                           required={true}
@@ -122,7 +122,7 @@ function NewUpdateTaskerTaskTypeForm() {
                               </div>
                               <div>
                                   <p className="field-error">
-                                      {rateError &&   <span className="error"> 
+                                      {rateError &&   <span className="error">
                                                           <i className="fa-solid fa-triangle-exclamation"></i>
                                                           {rateError}
                                                       </span>}

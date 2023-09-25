@@ -10,12 +10,12 @@ import "./LoginSignup.css"
 
 function LoginSignup() {
     const { taskTypeId } = useParams();
-    console.log(taskTypeId, "TASKTYPEID********************")
+    // console.log(taskTypeId, "TASKTYPEID********************")
     const sessionUser = useSelector((state) => state.session.user);
     if (sessionUser) return <Redirect to={`/tasks/new/${taskTypeId}`} />;
-    console.log(taskTypeId, "tasktypeID ______________")
+    // console.log(taskTypeId, "tasktypeID ______________")
 
-    
+
     return (
         <div className="login-signup-root">
             <div className="login-signup-container">
@@ -23,10 +23,10 @@ function LoginSignup() {
                     <div className="taskwabbit-title">taskWabbit</div>
                     <Link to={`/signup/${taskTypeId ?? ''}`} >
                         <button className="signup-button">
-                            Sign up 
+                            Sign up
                         </button>
                     </Link>
-                    
+
 
                     <Link to={`/login/${taskTypeId ?? ''}`}>
                         <button className='login-button'>Log in</button>

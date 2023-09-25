@@ -73,7 +73,7 @@ const ReviewByLoggedIn = () => {
                         <div>
                         {rev.task_id && (
                             <div id="revContent">
-                                Task: {rev.task_id}
+                                Task: {rev.task.title}
                             </div>
                         )}
                         {rev.task_id && (

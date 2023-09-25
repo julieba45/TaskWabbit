@@ -8,7 +8,7 @@ from app.models import User
 def email_is_valid(form, field):
     # Checking if email is valid
     email = field.data
-    print(email, "***********************EMAIL***********************")
+    # print(email, "***********************EMAIL***********************")
     try:
         emailinfo = validate_email(email, check_deliverability=False)
         print(emailinfo, "*****EMAILINFO******")
@@ -16,12 +16,12 @@ def email_is_valid(form, field):
     except EmailNotValidError as e:
         print(str(e))
         raise ValidationError('Please use valid email address.')
-    
+
 def user_exists(form, field):
     # Checking if user exists
     email = field.data
     user = User.query.filter(User.email == email).first()
-    print(user, "***********************USER***********************")
+    # print(user, "***********************USER***********************")
     if user:
         raise ValidationError('Email address is already in use.')
 
@@ -31,7 +31,7 @@ def username_exists(form, field):
     user = User.query.filter(User.username == username).first()
     if user:
         raise ValidationError('Username is already in use.')
-    
+
 def phone_exists(form, field):
     # Checking if phone is already in use
     phone = field.data

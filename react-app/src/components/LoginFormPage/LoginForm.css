@@ -9,7 +9,7 @@ html, body
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("https://ipfs.io/ipfs/QmRSrrKztpa9ALGK5pVqE9Hsbqp7oBmtFfvUoiDDWg7iHT?filename=moving_cropped.webp");
+    background-image: url("https://taskwabbit.s3.us-east-2.amazonaws.com/login-signup.jpeg");
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -77,7 +77,7 @@ html, body
 }
 
 button.login-button2:hover {
-    background-color: rgb(0, 72, 57);   
+    background-color: rgb(0, 72, 57);
 }
 
 .taskwabbit-title-login {

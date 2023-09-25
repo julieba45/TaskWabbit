@@ -81,7 +81,7 @@ function EditTaskFormPage(){
 
     useEffect(() => {
         if(task){
-          console.log(task.user_id, 'task.user_Id')
+          // console.log(task.user_id, 'task.user_Id')
           if (task.user_id !== loggedInUserId) {
             dispatch(clearCurrentTask());
             history.push('/tasks/current');

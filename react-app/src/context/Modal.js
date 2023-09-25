@@ -12,7 +12,7 @@ export function ModalProvider({ children }) {
 
 
   const closeModal = () => {
-    console.log('Closing modal')
+    // console.log('Closing modal')
     setModalContent(null); // clear the modal contents
     // If callback function is truthy, call the callback function and reset it
     // to null:
